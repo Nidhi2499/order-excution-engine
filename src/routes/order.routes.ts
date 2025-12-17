@@ -12,8 +12,8 @@ async function orderRoutes(app: FastifyInstance) {
     reply.send({ orderId });
   });
 
-  app.get("/ws/:orderId", { websocket: true }, (conn, req) => {
-    const { orderId } = req.params as any;
+  app.get("/ws/:orderId", { websocket: true } as any, (conn: any, req: any) => {
+    const { orderId } = req.params;
     registerClient.registerClient(orderId, conn.socket);
   });
 }

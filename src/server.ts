@@ -1,6 +1,6 @@
-import Fastify from "fastify";
-import websocket from "@fastify/websocket";
-import orderRoutes = require("./routes/order.routes");
+const Fastify = require("fastify");
+const websocket = require("@fastify/websocket");
+const orderRoutes = require("./routes/order.routes");
 
 const app = Fastify();
 app.register(websocket);
